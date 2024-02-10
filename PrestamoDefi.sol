@@ -66,8 +66,7 @@ contract prestamoDefi {
         emit EventoAltaPrestamista(nuevoPrestamista);
     }
 
-   
-    
+
     function altaCliente(address nuevoCliente) public soloEmpleadoPrestamista() {
         require(!clientes[nuevoCliente].activado, "Este cliente ya esta dado de alta");
 
@@ -81,6 +80,7 @@ contract prestamoDefi {
         //emito un evento de nuevo cliente
         emit EventoAltaCliente(nuevoCliente);
     }
+    
 
     function depositarGarantia() public payable soloClienteRegistrado() {
         // Asegurar que se haya enviado al menos una cantidad mayor a 0
