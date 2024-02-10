@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+git push// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -56,7 +56,6 @@ contract prestamoDefi {
         socioPrincipal = payable(msg.sender);
         empleadosPrestamista[socioPrincipal]= true;
     }
-
 
 
     function altaPrestamista(address nuevoPrestamista) public soloSocioPrincipal() {
