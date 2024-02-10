@@ -35,6 +35,7 @@ contract prestamoDefi {
     event EventoAltaCliente(address nuevoCliente);
     event EventoDepositoGarantia(address depositario, uint256 depositoGarantia);
     event EventoAltaPrestamista(address nuevoPrestamista);
+  
    
 
      modifier soloSocioPrincipal() {
