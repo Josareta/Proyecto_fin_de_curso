@@ -34,6 +34,7 @@ contract prestamoDefi {
     event GarantiaLiquidada(address prestatario, uint256 id, uint256 monto);
     event EventoAltaCliente(address nuevoCliente);
     event EventoDepositoGarantia(address depositario, uint256 depositoGarantia);
+    event EventoAltaPrestamista(address nuevoPrestamista);
    
 
      modifier soloSocioPrincipal() {
@@ -59,11 +60,14 @@ contract prestamoDefi {
 
 
     function altaPrestamista(address nuevoPrestamista) public soloSocioPrincipal() {
-        require(!empleadosPrestamista[nuevoPrestamista], "Este prestamista ya esta dado de alta");
+        require(!empleadosPrestamista[nuevoPrestamista], "Este prestamista ya esta dado de alta como prestamista");
         empleadosPrestamista[nuevoPrestamista] = true;
+
+        //emito un evento de nuevo prestamista
+        emit EventoAltaPrestamista(nuevoPrestamista);
     }
 
-
+   
    
     function altaCliente(address nuevoCliente) public soloEmpleadoPrestamista() {
         require(!clientes[nuevoCliente].activado, "Este cliente ya esta dado de alta");
