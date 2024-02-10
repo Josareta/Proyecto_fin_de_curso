@@ -148,7 +148,6 @@ contract prestamoDefi {
     }
 
  
-
     function reembolsarPrestamo(uint256 id_) public soloClienteRegistrado() {
         // Instanciar una variable de tipo struct Cliente storage llamada prestatario
         Cliente storage prestatario = clientes[msg.sender];
